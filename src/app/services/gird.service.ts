@@ -9,7 +9,8 @@ interface Grid {
     providedIn: 'root',
 })
 export class GridService {
-    private grid: Grid = { rows: 3, columns: 3 };
+    private grid: Grid = { rows: 10, columns: 10 };
+    private fillValue: number = 0;
 
     setGridSize(rows: number, columns: number) {
         this.grid = { rows, columns };
@@ -21,5 +22,13 @@ export class GridService {
 
     getGridColumns(): number {
         return this.grid.columns;
+    }
+
+    setFillValue(value: number) {
+        this.fillValue = value;
+    }
+
+    getFillValue(): number {
+        return this.fillValue;
     }
 }

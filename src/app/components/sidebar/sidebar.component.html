@@ -5,8 +5,10 @@
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-      <side-bar-tile title="Grid Size" icon="grid-3x3-gap" (tileClick)="openGridSizeModal()"/>
+      <side-bar-tile title="Grid Size" icon="grid" (tileClick)="openGridSizeModal()"/>
+      <side-bar-tile title="Fill Value" icon="1-square" (tileClick)="openFillValueModal()"/>
     </ul>
   </div>
 
   <grid-size-modal [isVisible]="gridSizeModalVisible" [title]="'Grid Size'" (closeModal)="closeGridSizeModal()"/>
+  <fill-value-modal [isVisible]="fillValueModalVisible" [title]="'Fill Value'" (closeModal)="closeFillValueModal()"/>

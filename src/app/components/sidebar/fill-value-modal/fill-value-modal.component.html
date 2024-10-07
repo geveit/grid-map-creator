@@ -1,0 +1,15 @@
+<modal [isVisible]="isVisible" [title]="'Fill Value'" (closeModal)="onCloseModal()" (confirm)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label class="text-white" for="value">Value</label>
+      <input
+        id="value"
+        type="number"
+        class="form-control"
+        formControlName="fillValue"
+        min="0"
+      />
+        <div *ngIf="form.controls['fillValue'].invalid && form.controls['fillValue'].touched">
+          <small class="text-danger">Rows must be at least 0</small>
+        </div>
+    </form>
+</modal>
