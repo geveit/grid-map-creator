@@ -1,0 +1,33 @@
+<modal [isVisible]="isVisible" [title]="'Grid Size'" (closeModal)="onCloseModal()" (confirm)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+          <label class="text-white" for="rows">Rows</label>
+          <input
+            id="rows"
+            type="number"
+            class="form-control"
+            formControlName="rows"
+            min="1"
+            required
+          />
+          <div *ngIf="form.controls['rows'].invalid && form.controls['rows'].touched">
+            <small class="text-danger">Rows must be at least 1</small>
+          </div>
+        </div>
+    
+        <div class="form-group mb-3">
+          <label class="text-white" for="columns">Columns</label>
+          <input
+            id="columns"
+            type="number"
+            class="form-control"
+            formControlName="columns"
+            min="1"
+            required
+          />
+          <div *ngIf="form.controls['columns'].invalid && form.controls['columns'].touched">
+            <small class="text-danger">Columns must be at least 1</small>
+          </div>
+        </div>
+    </form>
+</modal>

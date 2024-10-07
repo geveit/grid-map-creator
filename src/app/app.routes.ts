@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { CreatorComponent } from './features/creator/creator.component';
+import { CreatorComponent } from './pages/creator/creator.component';
 
 export const routes: Routes = [
     {

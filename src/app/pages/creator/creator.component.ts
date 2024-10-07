@@ -9,5 +9,5 @@ import { SideBarComponent } from "../../components/sidebar/sidebar.component";
     imports: [SideBarComponent]
 })
 export class CreatorComponent {
-
+    
 }
