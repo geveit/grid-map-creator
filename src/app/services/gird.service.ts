@@ -1,27 +1,24 @@
 import { Injectable } from "@angular/core";
-
-interface Grid {
-    rows: number;
-    columns: number;
-}
+import { Grid } from "../models/grid.model";
+import { Cell } from "../models/cell.model";
 
 @Injectable({
     providedIn: 'root',
 })
 export class GridService {
-    private grid: Grid = { rows: 10, columns: 10 };
+    private grid: Grid = new Grid();
     private fillValue: number = 0;
 
     setGridSize(rows: number, columns: number) {
-        this.grid = { rows, columns };
+        this.grid.setSize(rows, columns);
     }
 
     getGridRows(): number {
-        return this.grid.rows;
+        return this.grid.getRows();
     }
 
     getGridColumns(): number {
-        return this.grid.columns;
+        return this.grid.getColumns();
     }
 
     setFillValue(value: number) {
@@ -30,5 +27,13 @@ export class GridService {
 
     getFillValue(): number {
         return this.fillValue;
+    }
+
+    fillCell(row: number, column: number, value: number) {
+        this.grid.fillCell(row, column, value);
+    }
+
+    getGridCells(): Cell[][] {
+        return this.grid['cells'];
     }
 }
